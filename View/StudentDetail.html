@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sinh viên</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .student-details {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: black;
+    }
+
+    a {
+      color:black;
+      text-decoration: none;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h1>Xem chi tiet sinh vien: </h1>
+  <?php
+    echo '<div class="student-details">';
+    echo '<h3> Name: ' . $student->name .' </h3>' ;
+    echo '<h3> Age: ' . $student->age .' </h3> ';
+    echo '<h3> University: ' . $student->university .' </h3> ';
+    <!-- echo '<h3><a href="C_Student.php">Back</a></h3>'; -->
+    echo '<h3><a href="javascript:history.back()">Back</a></h3>';
+    echo '</div>';
+  ?>
+ </body>
+</html>
+
+
+ 

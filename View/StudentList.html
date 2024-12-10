@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Sinh Vien</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    table, th, td{
+      border: 1px solid black;
+    }
+    th, td{
+      padding: 10px;
+    }
+    th{
+      background-color: #f2f2f2;
+    }
+    a{
+      color: #337ab7;
+      text-decoration: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Danh sach sinh vien</h1>
+  <table border="1" width="100%" >
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <?php
+    if (is_array($studentList) && count($studentList) > 0) {
+        $i = 1;
+        foreach ($studentList as $student) {
+            echo '<tr>
+                <td>' . $i . '</td>
+                <td><a href="C_Student.php?id=' . $student->id . '">' . $student->name . '</a></td>
+                <td><a href="C_Student.php?id=' . $student->id . '&action=update">xxx</a></td>
+                <td><a style="color: red;" href="C_Student.php?id=' . $student->id . '&action=delete" id="delete" onclick="handleDel()">xxx</a></td>
+            </tr>';
+            $i++;
+        }
+    } else {
+        echo '<tr>
+            <td colspan="4">Không có sinh viên nào</td>
+        </tr>';
+    }
+  ?>
+  </table>
+  <br>
+  <h3><a href="../index.php">HomePage</a></h3>
+
+  <script>
+    function handleDel(){
+      if(confirm("Bạn có chắc chắn muốn xóa sinh viên này không?")){
+        return true;
+      }
+      return this.event.preventDefault();
+    }
+  </script>
+ </body>
+</html>
+
+
+
+ 
